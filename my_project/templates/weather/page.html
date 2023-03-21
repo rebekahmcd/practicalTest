@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #ffff00;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+        <title>School news</title>
+    </head>
+    <body>
+        <div>
+        <h1>School News</h1>
+        {% if news %}
+            <ul>
+                {% for news in news %}
+                <li>
+                    <h2>{{ news.title }}</h2>
+                    <p><i>By {{ news.author }} {{ news.date }}</i></p>
+                    <p>{{ news.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no news articals present.</strong>
+        {% endif %}
+        </div>
+    </body>
+</html>
