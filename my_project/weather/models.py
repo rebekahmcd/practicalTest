@@ -6,5 +6,8 @@ class News(models.Model):
     date = models.DateField()
     description = models.TextField()
 
+    class Meta:
+        verbose_name_plural = 'News'
+
     def __str__(self):
         return self.title
